@@ -7,7 +7,6 @@ void error_handling(char *message)
     exit(1);
 }
 
-// 명령을 서버에 전송하고 응답을 출력
 void execute_command(int socket, Command *command)
 {
     send(socket, command, sizeof(*command), 0);
@@ -16,7 +15,6 @@ void execute_command(int socket, Command *command)
     printf("%s\n", response);
 }
 
-// 파일 다운로드
 void download_file(int socket, const char *filename)
 {
     Command command;
@@ -55,7 +53,6 @@ void download_file(int socket, const char *filename)
     printf("Downloaded [%s]\n", filename);
 }
 
-// 파일 업로드
 void upload_file(int socket, const char *filename, const char *server_path)
 {
     Command command;
