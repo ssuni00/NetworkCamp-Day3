@@ -131,7 +131,7 @@ void *handle_client(void *arg)
             int fd = open(file_path, O_WRONLY | O_CREAT, 0666);
             if (fd == -1)
             {
-                perror("Failed to open file for writing");
+                error_handling("Failed to open file for writing");
                 break;
             }
 
